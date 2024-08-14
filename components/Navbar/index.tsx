@@ -14,7 +14,7 @@ const Navbar = () => {
     setAvatar(getAvatar());
     setUsername(pb.authStore.model?.username);
     console.log("Avatar URL: ", avatar);
-  }, [])    
+  }, [avatar])    
 
   return (
     <>
