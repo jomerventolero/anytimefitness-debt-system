@@ -20,7 +20,6 @@ const DashBoard = () => {
       <div className="flex gap-4 justify-between">
 
       </div>
-      
     </div>
   )
 }
