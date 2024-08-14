@@ -86,7 +86,7 @@ const SignIn = () => {
                           </div>
                           <div className="flex flex-col justify-center gap-4 items-center">
                             <a href="/forgotpassword" className="text-sm hover:text-violet-500 duration-300 transition-colors ease-in-out">Forgot Password?</a>
-                            <Link href="/public/signup" className="text-sm self-center hover:text-violet-500 duration-300 transition-colors ease-in-out">Don't have an account? Sign Up</Link>
+                            <Link href="/public/signup" className="text-sm self-center hover:text-violet-500 duration-300 transition-colors ease-in-out">Don&apos;t have an account? Sign Up</Link>
                           </div>
                       </form>
                   </Form>

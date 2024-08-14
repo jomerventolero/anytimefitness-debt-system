@@ -12,7 +12,7 @@ const DashBoard = () => {
     if (!pb.authStore.isValid) {
       router.push("/public/signin")    
     }
-  }, [])
+  },)
 
   return (
     <div className='h-screen flex sm:flex-col gap-4 px-20 mx-20'>
