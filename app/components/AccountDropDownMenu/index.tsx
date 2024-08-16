@@ -17,7 +17,7 @@ import {
   LayoutDashboard,
 } from "lucide-react"
 
-import { getAvatar, pb }  from "@/api/auth/pocketbase"
+import { pb }  from "@/api/auth/pocketbase"
 import { useRouter } from "next/navigation"
 
 import {
@@ -33,10 +33,9 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/app/components/ui/dropdown-menu"
 
-import AvatarDashboard from "@/components/AvatarDashboard"
-import { useState, useEffect } from "react"
+import AvatarDashboard from "@/app/components/AvatarDashboard"
 
 export function AccountDropdownMenu() {
   const router = useRouter();
@@ -45,36 +44,24 @@ export function AccountDropdownMenu() {
     router.push("/public/signin")
   }
 
-  const [avatar, setAvatar] = useState<string | undefined>(undefined);
-
-  const fetchAvatar = async () => {
-    const avatarURL = await getAvatar();
-    setAvatar(avatarURL);
-  };
-
-  useEffect(() => {
-    fetchAvatar();
-  }, []);
-
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="rounded-full m-1 my-2 ">
-          <AvatarDashboard avatar={avatar}/> 
+          <AvatarDashboard /> 
         </button>  
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem onClick={() => router.push("/dashboard")}>
+          <DropdownMenuItem onClick={() => router.push("/private/dashboard")}>
             <LayoutDashboard className="mr-2 h-4 w-4" />
             <span>Dashboard</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => {router.push
-            ("/dashboard/profile")
+            ("/private/dashboard/profile")
           }}>
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>

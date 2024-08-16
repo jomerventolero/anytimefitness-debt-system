@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { IoMdAdd } from "react-icons/io";
 import { GrStatusGoodSmall } from "react-icons/gr";
+import { MdOutlineAddToHomeScreen } from "react-icons/md";
+import { AiOutlineCode } from "react-icons/ai";
+import { AiOutlineFileText } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -31,14 +34,14 @@ export default function Home() {
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:text-violet-600 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
             Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+              <AiOutlineFileText />
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -48,18 +51,34 @@ export default function Home() {
 
         <a
           href="http://ec2-3-107-74-111.ap-southeast-2.compute.amazonaws.com:8080/_/"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:text-violet-600 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
-            Backend Admin{" "}
+            Backend Login{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+              <AiOutlineCode />
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
             Pocketbase Backend Login
+          </p>
+        </a>
+
+        <a
+          href="/public/signin"
+          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:text-violet-600 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          rel="noopener noreferrer"
+        >
+          <h2 className="mb-3 text-2xl font-semibold">
+            Frontend Login{" "}
+            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              <MdOutlineAddToHomeScreen />
+            </span>
+          </h2>
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+            Login to Revive Recovery Software
           </p>
         </a>
       </div>

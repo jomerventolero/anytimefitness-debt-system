@@ -1,7 +1,7 @@
 "use client"
-import { Button } from '@/components/ui/button'
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+import { Button } from '@/app/components/ui/button'
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/app/components/ui/form'
+import { Input } from '@/app/components/ui/input'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import React from 'react'
@@ -11,8 +11,8 @@ import { useRouter } from 'next/navigation'
 
 import { createUser } from '@/api/auth/pocketbase'
 import Link from 'next/link'
-import { useToast } from '@/components/ui/use-toast'
-import { ToastAction } from '@/components/ui/toast'
+import { useToast } from '@/app/components/ui/use-toast'
+import { ToastAction } from '@/app/components/ui/toast'
 
 const formSchema = z.object({
     username: z.string().min(2, { message: "Username must be at least 2 characters" }).max(50, { message: "Username must be less than 50 characters" }),

@@ -1,6 +1,6 @@
 "use client"
-import Navbar from '@/components/Navbar'
-import { ProfileDialog } from '@/components/ProfileDialog'
+import Navbar from '@/app/components/Navbar'
+import { ProfileDialog } from '@/app/components/ProfileDialog'
 import React, { useEffect, useState } from 'react'
 import { pb } from "@/api/auth/pocketbase"
 

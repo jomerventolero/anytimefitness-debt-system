@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -7,8 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
+} from "@/app/components/ui/dialog"
+import { Input } from "@/app/components/ui/input"
 import { pb, updateProfile } from "@/api/auth/pocketbase"
 import { useRouter } from "next/navigation"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
@@ -31,7 +31,7 @@ export function ProfileDialog() {
     const record = await updateProfile(form.getValues());
     if (record?.status == 200) {
       alert("Profile updated successfully");
-      router.push("/dashboard/profile");
+      router.push("/private/dashboard/profile");
     }
   }
 

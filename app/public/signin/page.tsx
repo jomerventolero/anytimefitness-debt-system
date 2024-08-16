@@ -2,16 +2,16 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
+import { Button } from '@/app/components/ui/button'
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/app/components/ui/form'
+import { Input } from '@/app/components/ui/input'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { loginEmail } from '@/api/auth/pocketbase'
 import { useRouter } from 'next/navigation'
 import { pb } from '@/api/auth/pocketbase';
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/app/components/ui/use-toast'
 
 const formSchema = z.object({
     email: z.string().min(2, { message: "Username must be at least 2 characters" }).max(50, { message: "Username must be less than 50 characters" }),
@@ -34,7 +34,7 @@ const SignIn = () => {
     try {
       await loginEmail(values);
       document.cookie = `pb_auth=${pb.authStore.exportToCookie()}; path=/`;
-      router.push('/dashboard');
+      router.push('/private/dashboard');
     } catch (error) {
       toast({ title: 'Error', description: 'Sign In Failed: ' + error, variant: 'destructive' })
     }
