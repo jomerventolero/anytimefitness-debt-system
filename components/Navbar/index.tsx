@@ -7,14 +7,11 @@ import { pb } from "@/api/auth/pocketbase"
 
 
 const Navbar = () => {
-  const [avatar, setAvatar] = useState<any>();
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    setAvatar(getAvatar());
     setUsername(pb.authStore.model?.username);
-    console.log("Avatar URL: ", avatar);
-  }, [avatar])    
+  }, [username])    
 
   return (
     <>

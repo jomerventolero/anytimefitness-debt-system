@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -7,8 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/app/components/ui/dialog"
-import { Input } from "@/app/components/ui/input"
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
 import { pb, updateProfile } from "@/api/auth/pocketbase"
 import { useRouter } from "next/navigation"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form"
@@ -23,7 +23,6 @@ const formSchema = z.object({
 })
 
 export function ProfileDialog() {
-
 
   const router = useRouter();
 

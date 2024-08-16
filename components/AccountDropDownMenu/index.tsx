@@ -33,9 +33,9 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/app/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
-import AvatarDashboard from "@/app/components/AvatarDashboard"
+import AvatarDashboard from "@/components/AvatarDashboard"
 
 export function AccountDropdownMenu() {
   const router = useRouter();

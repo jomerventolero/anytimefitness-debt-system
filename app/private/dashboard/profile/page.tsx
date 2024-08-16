@@ -1,6 +1,6 @@
 "use client"
-import Navbar from '@/app/components/Navbar'
-import { ProfileDialog } from '@/app/components/ProfileDialog'
+import Navbar from '@/components/Navbar'
+import { ProfileDialog } from '@/components/ProfileDialog'
 import React, { useEffect, useState } from 'react'
 import { pb } from "@/api/auth/pocketbase"
 
@@ -8,7 +8,7 @@ const Profile = () => {
   const [profile, setProfile] = useState<any>({});
 
   const fetchProfile = async () => {
-    const profileData = await pb.collection('users').getOne(pb.authStore.model?.id);
+    const profileData = await pb.authStore.model;
     setProfile(profileData);
   }
 
