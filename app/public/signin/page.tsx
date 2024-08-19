@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
@@ -85,8 +84,7 @@ const SignIn = () => {
                             
                           </div>
                           <div className="flex flex-col justify-center gap-4 items-center">
-                            <a href="/forgotpassword" className="text-sm hover:text-violet-500 duration-300 transition-colors ease-in-out">Forgot Password?</a>
-                            <Link href="/public/signup" className="text-sm self-center hover:text-violet-500 duration-300 transition-colors ease-in-out">Don&apos;t have an account? Sign Up</Link>
+                            <a href="/public/forgotpassword" className="text-sm hover:text-violet-500 duration-300 transition-colors ease-in-out">Forgot Password?</a>
                           </div>
                       </form>
                   </Form>
