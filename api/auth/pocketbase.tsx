@@ -1,7 +1,7 @@
 import pocketbase from "pocketbase";
 import { useState } from "react";
 
-const pb = new pocketbase(process.env.NEXT_PUBLIC_POCKETBASE_URL || "http://ec2-3-107-74-111.ap-southeast-2.compute.amazonaws.com:8080/");
+const pb = new pocketbase(process.env.POCKETBASE_URL || "http://ec2-3-107-74-111.ap-southeast-2.compute.amazonaws.com:8080/");
 
 type UserDataType = {
     username: string
