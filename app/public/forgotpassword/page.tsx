@@ -32,8 +32,8 @@ const ForgotPassword = () => {
         <h1 className='text-4xl'>Forgot Password</h1>
         <p>Enter your email address to reset your password</p>
         <Input type='email' placeholder='name@example.com'  onChange={(e) => setEmail(e.target.value)}/>
-        <Button onClick={onSubmit}>Reset Password</Button>
-        <Button variant="ghost" onClick={onBack}>Back</Button>
+        <Button onClick={onSubmit} className="bg-[#6E38D5] hover:bg-violet-500 text-white">Reset Password</Button>
+        <Button onClick={onBack}>Back</Button>
       </div>
       <div className="sm:flex flex-col w-1/2 hidden">
         <Image draggable={false} className="h-screen object-cover" src="/images/onboarding.jpg" width={2000} height={2000} alt="Anytime Fitness Hero Bg"/>

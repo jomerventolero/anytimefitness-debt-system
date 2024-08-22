@@ -13,7 +13,7 @@ const index = (props: Props) => {
         <AvatarImage
           src={props.avatar}
         />
-        <AvatarFallback delayMs={600}>JD</AvatarFallback>
+        <AvatarFallback delayMs={600} className='bg-[#6E38D5] text-white'>AF</AvatarFallback>
       </Avatar>
     </>
   )

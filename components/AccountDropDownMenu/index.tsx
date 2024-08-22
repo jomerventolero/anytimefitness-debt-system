@@ -11,7 +11,7 @@ import {
   Plus,
   PlusCircle,
   Settings,
-  User,
+  Upload,
   UserPlus,
   Users,
   LayoutDashboard,
@@ -60,12 +60,9 @@ export function AccountDropdownMenu() {
             <span>Dashboard</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => {router.push
-            ("/private/dashboard/profile")
-          }}>
-            <User className="mr-2 h-4 w-4" />
-            <span>Profile</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          <DropdownMenuItem onClick={() => router.push("/private/dashboard/upload")}>
+            <Upload className="mr-2 h-4 w-4" />
+            <span>Upload</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <CreditCard className="mr-2 h-4 w-4" />

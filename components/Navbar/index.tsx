@@ -1,30 +1,9 @@
 import React from 'react'
 import Image from "next/image"
-import { useState, useEffect } from 'react'
 import { AccountDropdownMenu } from '../AccountDropDownMenu'
-import getDashboardData from '@/controllers/GetDashboardData'
-import { useCancelToken } from '@/api/auth/pocketbase'
-import { pb } from '@/api/auth/pocketbase'
+import { CgGym } from "react-icons/cg";
 
-const Navbar = () => {
-  const [username, setUsername] = useState("");
-  const [club, setClub] = useState("")
-  const { createCancelToken, cancelRequest } = useCancelToken();
-
-  useEffect(() => {
-    const source = createCancelToken();
-    source.signal.addEventListener("abort", () => {});
-    getDashboardData().then((data) => {
-      
-      setClub(data.club)
-    })
-    setUsername(pb.authStore.model?.username)
-
-    return () => {
-      cancelRequest()
-      source.abort();
-    }
-  }, [username, club])    
+const Navbar = (props: any) => {
 
   return (
     <>
@@ -34,14 +13,14 @@ const Navbar = () => {
           
         </div>
         <div className="flex flex-row gap-4 font-mono">
-          <span>Club: {club}</span>
+          
         </div>
         <div className="flex flex-row gap-4 rounded-lg border-[1px] border-gray-200 px-2 self-center">
-          <div className="self-center font-semibold">@{username}</div>
+          <div className="self-center font-semibold">@{props.username}</div>
+          {props.data?.gym?.name == 'all' ? null : <span className="self-center flex flex-row gap-1"><CgGym className="text-[#6E38D5] self-center"/> {props.data?.gym?.name}</span>}
           <AccountDropdownMenu />          
         </div>
       </div>
-      <hr/>
     </>
   )
 }

@@ -30,12 +30,22 @@ const SignIn = () => {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    let indicator = ""
     try {
-      await loginEmail(values);
+      const record = await loginEmail(values);
       document.cookie = `pb_auth=${pb.authStore.exportToCookie()}; path=/`;
       router.push('/private/dashboard');
-    } catch (error) {
+      if (record) {
+        indicator = "Success"
+      } else {
+        indicator = "Failed"
+      }
+    }    
+    catch (error) {
+      indicator = "Error"
       toast({ title: 'Error', description: 'Sign In Failed: ' + error, variant: 'destructive' })
+    } finally {
+      toast({ title: 'Info', description: 'Sign In ' + indicator, variant: 'default' })
     }
   }
 
@@ -80,7 +90,7 @@ const SignIn = () => {
                             )}
                           />
                           <div className="flex flex-row gap-4 justify-center items-center py-4">
-                            <Button type="submit">Sign In with Email</Button>
+                            <Button type="submit" className="bg-[#6E38D5] hover:bg-violet-500 text-white">Sign In with Email</Button>
                             
                           </div>
                           <div className="flex flex-col justify-center gap-4 items-center">
